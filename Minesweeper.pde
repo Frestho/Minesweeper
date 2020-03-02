@@ -1,7 +1,8 @@
 import de.bezier.guido.*;
-//Declare and initialize constants NUM_ROWS and NUM_COLS = 20
-private MSButton[][] buttons; //2d array of minesweeper buttons
-private ArrayList <MSButton> mines; //ArrayList of just the minesweeper buttons that are mined
+public final static int NUM_ROWS = 5;
+public final static int NUM_COLS = 5;
+private MSButton[][] buttons = new MSButton[NUM_ROWS][NUM_COLS]; //2d array of minesweeper buttons
+private ArrayList <MSButton> mines = new ArrayList<MSButton>(); //ArrayList of just the minesweeper buttons that are mined
 
 void setup ()
 {
@@ -12,14 +13,23 @@ void setup ()
     Interactive.make( this );
     
     //your code to initialize buttons goes here
-    
-    
+    //too lazy to initialize size here so i did it at the beginning
+    for(int i = 0; i < NUM_ROWS; i++) {
+        for(int j = 0; j < NUM_COLS; j++) {
+            buttons[i][j] = new MSButton(i, j);
+        }
+    }
     
     setMines();
 }
 public void setMines()
 {
     //your code
+    int r = (int)(Math.random()*NUM_ROWS);
+    int c = (int)(Math.random()*NUM_COLS);
+    if(!mines.contains(buttons[r][c]))
+            mines.add(buttons[r][c]);
+
 }
 
 public void draw ()
@@ -44,12 +54,21 @@ public void displayWinningMessage()
 public boolean isValid(int r, int c)
 {
     //your code here
+    if(r >= 0 && r < NUM_ROWS && c >= 0 && c >= NUM_COLS) return true;
     return false;
 }
 public int countMines(int row, int col)
 {
     int numMines = 0;
     //your code here
+    for(int i = -1; i < 2; i++) {
+        for(int j = -1; j < 2; j++) {
+            if(i == 0 && j == 0) continue;
+            if(isValid(r+i, c+j) && mines.contains(buttons[r+i][c+j])) {
+                
+            }
+        }
+    }
     return numMines;
 }
 public class MSButton
@@ -61,8 +80,8 @@ public class MSButton
     
     public MSButton ( int row, int col )
     {
-        // width = 400/NUM_COLS;
-        // height = 400/NUM_ROWS;
+        width = 400/NUM_COLS;
+        height = 400/NUM_ROWS;
         myRow = row;
         myCol = col; 
         x = myCol*width;
@@ -82,8 +101,8 @@ public class MSButton
     {    
         if (flagged)
             fill(0);
-        // else if( clicked && mines.contains(this) ) 
-        //     fill(255,0,0);
+         else if( clicked && mines.contains(this) ) 
+             fill(255,0,0);
         else if(clicked)
             fill( 200 );
         else 
