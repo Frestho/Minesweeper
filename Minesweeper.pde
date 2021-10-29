@@ -140,6 +140,7 @@ public class MSButton
     }
     public void draw () 
     {    
+    	stroke(0);
         if (flagged) {
             fill(0);
             rect(x, y, width, height);
@@ -159,22 +160,20 @@ public class MSButton
         text(myLabel,x+width/2,y+height/2);
         }
         else {
-            fill( 100 );
-        text(myLabel,x+width/2,y+height/2);
         fill(189);
 			noStroke();
 			rect(
-				x + width / 5,
-				y + width / 5,
-				width * 3 / 5,
-				height * 3 / 5
+				x + width / 5.0,
+				y + width / 5.0,
+				width * 3.0 / 5.0,
+				height * 3.0 / 5.0
 			);
 			fill(255);
-			rect(x, y, width * 9 / 10, height / 5);
-			rect(x, y, width / 5, height * 9 / 10);
+			rect(x, y, width * 9.0 / 10.0, height / 5.0);
+			rect(x, y, width / 5.0, height * 9.0 / 10.0);
 			fill(123);
-			rect(x + width * 4 / 5,y + width * 1 / 10, width / 5, width * 8.5 / 10);
-			rect(x +  width * 1 / 10,y + width * 4 / 5, width * 8.5 / 10, width / 5);
+			rect(x + width * 4.0 / 5.0,y + width * 1 / 10.0, width / 5.0, width * 8.5 / 10);
+			rect(x +  width * 1 / 10.0,y + width * 4.0 / 5.0, width * 8.5 / 10, width / 5.0);
             }
 		
     }
