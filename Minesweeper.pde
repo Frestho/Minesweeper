@@ -145,10 +145,10 @@ public class MSButton
             fill(189);
 			noStroke();
 			rect(
-				x + width / 5.0,
-				y + width / 5.0,
-				width * 3.0 / 5.0,
-				height * 3.0 / 5.0
+				x + width / 6.0,
+				y + width / 6.0,
+				width * 4.0 / 5.0,
+				height * 4.0 / 5.0
 			);
 			fill(255);
 			rect(x, y, width * 9.0 / 10.0, height / 5.0);
@@ -158,7 +158,7 @@ public class MSButton
 			rect(x +  width * 1 / 10.0,y + width * 4.0 / 5.0, width * 8.5 / 10, width / 5.0);
             
         	fill(255, 0, 0);
-			triangle(x + width / 2.5, y + width / 3.25, x + width / 2.5, y + width/1.5,x + width / 1.3, y + width / 2);
+			triangle(x + width / 2.5, y + width / 3.25, x + width / 2.5, y + width/1.9,x + width / 1.3, y + width / 2.6);
 			fill(0,0,0);
 			rect(x + width / 2.5, y + width/ 3.25, 2, 9);
         }
@@ -180,8 +180,8 @@ public class MSButton
 			rect(
 				x + width / 6.0,
 				y + width / 6.0,
-				width * 3.0 / 5.0,
-				height * 3.0 / 5.0
+				width * 4.0 / 5.0,
+				height * 4.0 / 5.0
 			);
 			fill(255);
 			rect(x, y, width * 9.0 / 10.0, height / 5.0);
