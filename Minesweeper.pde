@@ -161,7 +161,7 @@ public class MSButton
         else {
             fill( 100 );
         text(myLabel,x+width/2,y+height/2);
-        fill("#bdbdbd");
+        fill(189);
 			noStroke();
 			rect(
 				x + width / 5,
@@ -172,7 +172,7 @@ public class MSButton
 			fill(255);
 			rect(x, y, width * 9 / 10, height / 5);
 			rect(x, y, width / 5, height * 9 / 10);
-			fill("#7b7b7b");
+			fill(123);
 			rect(x + width * 4 / 5,y + width * 1 / 10, width / 5, width * 8.5 / 10);
 			rect(x +  width * 1 / 10,y + width * 4 / 5, width * 8.5 / 10, width / 5);
             }
