@@ -178,8 +178,8 @@ public class MSButton
         fill(189);
 			noStroke();
 			rect(
-				x + width / 5.0,
-				y + width / 5.0,
+				x + width / 6.0,
+				y + width / 6.0,
 				width * 3.0 / 5.0,
 				height * 3.0 / 5.0
 			);
